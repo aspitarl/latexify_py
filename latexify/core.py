@@ -184,7 +184,7 @@ class LatexifyVisitor(ast.NodeVisitor):
     reprs = {
         ast.Add: (lambda: _wrap(l) + ' + ' + _wrap(r)),
         ast.Sub: (lambda: _wrap(l) + ' - ' + _wrap(r)),
-        ast.Mult: (lambda: _wrap(l) + _wrap(r)),
+        ast.Mult: (lambda: _wrap(l) + '*'+ _wrap(r)),
         ast.MatMult: (lambda: _wrap(l) + _wrap(r)),
         ast.Div: (lambda: r'\frac{' + _unwrap(l) + '}{' + _unwrap(r) + '}'),
         ast.FloorDiv: (lambda: r'\left\lfloor\frac{' + _unwrap(l) + '}{' + _unwrap(r) + r'}\right\rfloor'),
